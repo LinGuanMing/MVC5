@@ -1,0 +1,8 @@
+Controllers => 控制輸入輸出(控制程式執行的流程)，但不決定輸出的內容
+Controllers如果要取資料，會叫model取資料給Controllers，Controllers把資料丟給view
+
+三個口訣:
+1.controllers->要輕
+2.model->要肥
+3.view->要夠笨
+
