@@ -6,3 +6,7 @@ Controllers如果要取資料，會叫model取資料給Controllers，Controllers把資料丟給view
 2.model->要肥
 3.view->要夠笨
 
+選model右鍵新增項目->加入ADO.NET實體資料模型->Fabrics
+->預設第一個
+->選擇資料連接
+->打勾所有table都加入，預設值加入
