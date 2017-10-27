@@ -257,7 +257,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FabricsEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FabricsEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Occupation" EntityType="Self.Occupation" />
           <EntitySet Name="Order" EntityType="Self.Order" />
@@ -285,7 +285,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FabricsModelStoreContainer" CdmEntityContainer="FabricsEntities">
+        <EntityContainerMapping StorageEntityContainer="FabricsModelStoreContainer" CdmEntityContainer="FabricsEntities1">
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="FabricsModel.Client">
               <MappingFragment StoreEntitySet="Client">
