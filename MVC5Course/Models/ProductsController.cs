@@ -19,8 +19,14 @@ namespace MVC5Course.Models
             return View(db.Product.Take(10).ToList());
         }
 
-        // GET: Products/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Search(string keyword)
+        {
+            var data = db.Product.Where(p => p.ProductName.Contains(keyword)).Take(10).ToList();
+            return View("Index", data);
+        }
+
+    // GET: Products/Details/5
+    public ActionResult Details(int? id)
         {
             if (id == null)
             {
