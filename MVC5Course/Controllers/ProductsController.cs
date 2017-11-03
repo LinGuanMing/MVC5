@@ -77,7 +77,8 @@ namespace MVC5Course.Models
                        select new CreateNewVM()
                        {
                            ProductName = x.ProductName,
-                           Price = x.Price
+                           Price = x.Price,
+                           OrderLineCount = x.OrderLine.Count()
                        };
             return View(data);
         }
