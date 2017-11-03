@@ -25,8 +25,8 @@ namespace MVC5Course.Models
             return View("Index", data);
         }
 
-    // GET: Products/Details/5
-    public ActionResult Details(int? id)
+        // GET: Products/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -43,6 +43,29 @@ namespace MVC5Course.Models
         // GET: Products/Create
         public ActionResult Create()
         {
+            return View();
+        }
+        public ActionResult CreateNew()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateNew(CreateNewVM data)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Product.Add(new Product()
+                {
+                    ProductId = 0,
+                    ProductName = data.ProductName,
+                    Price = data.Price,
+                    Active = true,
+                    Stock = 1
+                });
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View();
         }
 
