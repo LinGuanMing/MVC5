@@ -76,6 +76,7 @@ namespace MVC5Course.Models
             var data = from x in result
                        select new CreateNewVM()
                        {
+                           ProductID = x.ProductId,
                            ProductName = x.ProductName,
                            Price = x.Price,
                            OrderLineCount = x.OrderLine.Count()
@@ -90,6 +91,15 @@ namespace MVC5Course.Models
             {
                 item.Price += 1;
             }
+            db.SaveChanges();
+            return RedirectToAction("Top10");
+        }
+
+        public ActionResult Price_one(int id)
+        {
+            var db = new FabricsEntities();
+            Product data = db.Product.Find(id);
+            data.Price += 1;
             db.SaveChanges();
             return RedirectToAction("Top10");
         }
