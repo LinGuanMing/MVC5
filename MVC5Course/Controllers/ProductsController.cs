@@ -69,6 +69,19 @@ namespace MVC5Course.Models
             return View();
         }
 
+        public ActionResult Top10()
+        {
+            var db = new FabricsEntities();
+            var result = db.Product.Take(10);
+            var data = from x in result
+                       select new CreateNewVM()
+                       {
+                           ProductName= x.ProductName,
+                           Price= x.Price
+                       };
+            return View(data);
+        }
+
         // POST: Products/Create
         // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
