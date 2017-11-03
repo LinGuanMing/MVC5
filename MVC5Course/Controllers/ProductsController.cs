@@ -74,6 +74,7 @@ namespace MVC5Course.Models
             var db = new FabricsEntities();
             var result = db.Product.Take(10);
             var data = from x in result
+                       orderby x.ProductId
                        select new CreateNewVM()
                        {
                            ProductID = x.ProductId,
@@ -147,7 +148,7 @@ namespace MVC5Course.Models
             {
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Top10");
             }
             return View(product);
         }
