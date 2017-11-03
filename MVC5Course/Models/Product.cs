@@ -23,18 +23,18 @@ namespace MVC5Course.Models
 
         public int ProductId { get; set; }
 
-        [Required(ErrorMessage = "請填寫商品名稱")]
-        [StringLength(20, ErrorMessage = "商品名稱不得超過20個字元")]
+        //[Required(ErrorMessage = "請填寫商品名稱")]
+        //[StringLength(20, ErrorMessage = "商品名稱不得超過20個字元")]
         public string ProductName { get; set; }
 
-        [Required]
+        //[Required]
         public Nullable<decimal> Price { get; set; }
 
-        [Required]
+        //[Required]
         public Nullable<bool> Active { get; set; }
 
-        [Required]
-        [DisplayFormat(DataFormatString = "{0:N0}")]
+        //[Required]
+        //[DisplayFormat(DataFormatString = "{0:N0}")]
         public Nullable<decimal> Stock { get; set; }
 
 

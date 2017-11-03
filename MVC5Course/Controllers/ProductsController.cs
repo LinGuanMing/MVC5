@@ -76,10 +76,21 @@ namespace MVC5Course.Models
             var data = from x in result
                        select new CreateNewVM()
                        {
-                           ProductName= x.ProductName,
-                           Price= x.Price
+                           ProductName = x.ProductName,
+                           Price = x.Price
                        };
             return View(data);
+        }
+
+        public ActionResult PriceUp()
+        {
+            var db = new FabricsEntities();
+            foreach (var item in db.Product)
+            {
+                item.Price += 1;
+            }
+            db.SaveChanges();
+            return RedirectToAction("Top10");
         }
 
         // POST: Products/Create
