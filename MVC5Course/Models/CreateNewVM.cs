@@ -8,7 +8,7 @@ namespace MVC5Course.Models
 {
     public class CreateNewVM
     {
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
 
         [Required(ErrorMessage = "請填寫商品名稱")]
         [StringLength(20, ErrorMessage = "商品名稱不得超過20個字元")]

@@ -10,3 +10,5 @@ Controllers如果要取資料，會叫model取資料給Controllers，Controllers把資料丟給view
 ->預設第一個
 ->選擇資料連接
 ->打勾所有table都加入，預設值加入
+
+T-SQL string format @p0 @p1 @p2... 

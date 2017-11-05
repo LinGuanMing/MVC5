@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC5Course", "MVC5Course\MV
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D3A59B4-AF2A-4A74-BADE-43F303A24339}"
 	ProjectSection(SolutionItems) = preProject
+		1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_001.png = 1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_001.png
+		1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_002.png = 1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_002.png
+		1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_003.png = 1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_003.png
+		1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_004.png = 1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_004.png
+		1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_005.png = 1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_005.png
+		1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_006.png = 1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_006.png
+		1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_007.png = 1103_1練習建立 ProductCreationVM 並透過該 ViewModel 建立表單與寫回資料庫的程式邏輯\20171103_007.png
 		note.txt = note.txt
 	EndProjectSection
 EndProject

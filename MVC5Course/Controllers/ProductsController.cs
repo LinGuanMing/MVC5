@@ -73,15 +73,18 @@ namespace MVC5Course.Models
         {
             var db = new FabricsEntities();
             var result = db.Product.Take(10);
-            var data = from x in result
-                       orderby x.ProductId
-                       select new CreateNewVM()
-                       {
-                           ProductID = x.ProductId,
-                           ProductName = x.ProductName,
-                           Price = x.Price,
-                           OrderLineCount = x.OrderLine.Count()
-                       };
+            //var data = from x in result
+            //           orderby x.ProductId
+            //           select new CreateNewVM()
+            //           {
+            //               ProductID = x.ProductId,
+            //               ProductName = x.ProductName,
+            //               Price = x.Price,
+            //               OrderLineCount = x.OrderLine.Count()
+            //           };
+
+            var data = db.Database.SqlQuery<CreateNewVM>("SELECT TOP 10 *,OrderLineCount=(SELECT COUNT(*) FROM dbo.OrderLine o WHERE o.ProductId=p.ProductId) FROM dbo.Product p");
+
             return View(data);
         }
 
@@ -99,9 +102,10 @@ namespace MVC5Course.Models
         public ActionResult Price_one(int id)
         {
             var db = new FabricsEntities();
-            Product data = db.Product.Find(id);
-            data.Price += 1;
-            db.SaveChanges();
+            //Product data = db.Product.Find(id);
+            //data.Price += 1;
+            //db.SaveChanges();
+            var all = db.Database.ExecuteSqlCommand("UPDATE dbo.Product SET price=price+1 WHERE dbo.Product.ProductId=@p0 ", id);
             return RedirectToAction("Top10");
         }
 
