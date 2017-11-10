@@ -17,7 +17,15 @@ namespace MVC5Course.Models
         // GET: Products
         public ActionResult Index()
         {
-            return View(db.Product.Take(10).ToList());
+            if (true)
+            {
+                ViewData.Model = db.Product.Take(10).ToList();
+            }
+            else
+            {
+                ViewData.Model = db.Product.Take(10).ToList();
+            }
+            return View();
         }
 
         public ActionResult Search(string keyword)
@@ -121,6 +129,7 @@ namespace MVC5Course.Models
             {
                 db.Product.Add(product);
                 db.SaveChanges();
+                TempData["ProductInsertedMsg"] = product.ProductName + " 新增成功!";
                 return RedirectToAction("Index");
             }
 

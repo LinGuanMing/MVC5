@@ -5,14 +5,19 @@
 }
 
 <h2>Index</h2>
-
+@if (TempData["ProductInsertedMsg"] != null)
+{
+    < script >
+    alert('@TempData["ProductInsertedMsg"]')
+    </ script >
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <form action="/Products/Search" method="get">
     Search: <input type="search" name="keyword" />
     <input type="submit" value="搜尋" />
-    
+
 </form>
 <table class="table">
     <tr>
@@ -31,35 +36,37 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Active)
-        </td>
-        <td>
-            @if (item.Stock > 1000)
-            {
-                @:<strong>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @if (item.Stock > 1000)
+                {
+                    @:<strong>
             }
-            @*@string.Format("{0:N0}", item.Stock)*@
-            @Html.DisplayFor(modelItem => item.Stock)
-            @if (item.Stock > 1000)
-            {
-                @:</strong>
+                @*@string.Format("{0:N0}", item.Stock)*@
+                @Html.DisplayFor(modelItem => item.Stock)
+                @if (item.Stock > 1000)
+                {
+                    @:
+                </strong>
             }
-</td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
-        </td>
-    </tr>
-}
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+            </td>
+        </tr>
+    }
 
 </table>
