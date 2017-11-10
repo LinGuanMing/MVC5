@@ -130,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -201,6 +202,7 @@
     <Content Include="App_Data\Fabrics_log.ldf">
       <DependentUpon>Fabrics.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\1377946249-1584189015.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -265,6 +267,7 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\CreateNew.cshtml" />
     <Content Include="Views\Products\Top10.cshtml" />
+    <Content Include="Views\Shared\JSAlertRedirect.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
