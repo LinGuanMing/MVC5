@@ -156,9 +156,12 @@ namespace MVC5Course.Models
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product)
-        {
-            if (ModelState.IsValid)
+        public ActionResult Edit(int id, FormCollection form)
+        {// [Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product
+
+            Product product = db.Product.Find(id);
+
+            if (TryUpdateModel(product, new string[] { "ProductId", "ProductName", "Price", "Active", "Stock" }))
             {
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
